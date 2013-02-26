@@ -1,14 +1,14 @@
-Installation
+## Installation
 
-	git clone https://github.com/PsyDefect/dotfiles.git
+>    git clone https://github.com/PsyDefect/dotfiles.git
 
-Vim pluggins installed as git submodules:
+## Vim pluggins installed as git submodules:
 
-	cd dotfiles
-	git submodule update --init
+>    cd dotfiles
+>    git submodule update --init
 
-Create symlinks:
+## Create symlinks:
 
-	ln -s ~/dotfiles/bashrc ~/.bashrch
-	ln -s ~/dotfiles/vimrc ~/.vimrc
-	ln -s ~/dotfiles/vim ~/.vim
+>    ln -s ~/dotfiles/bashrc ~/.bashrch
+>    ln -s ~/dotfiles/vimrc ~/.vimrc
+>    ln -s ~/dotfiles/vim ~/.vim
