@@ -65,10 +65,10 @@ set foldmethod=syntax
 
 " paste mode - this will avoid unexpected effects when you
 " cut or copy some text from one window and paste it in Vim.
-set pastetoggle=<F11>
-set clipboard+=unnamedplus  " use the clipboards of Vim and win
-set paste               " Paste from a windows or from Vim
-set go+=a               " Visual selection automatically copied to the clipboard
+"set pastetoggle=<F11>
+set clipboard=unnamedplus  " use the clipboards of Vim and win
+"set paste               " Paste from a windows or from Vim
+"set go+=a               " Visual selection automatically copied to the clipboard
 
 " Make tabs default to 4 spaces
 set smartindent
