@@ -23,6 +23,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'bling/vim-airline'
+Bundle 'morhetz/gruvbox'
 
 filetype plugin indent on     " required!
 "
@@ -80,7 +81,8 @@ set expandtab
 set hlsearch
 
 " Set default colorscheme
-colorscheme molokai
+colorscheme gruvbox
+set bg=dark    " Setting dark mode
 
 " Line numbers
 set number
