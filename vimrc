@@ -92,11 +92,7 @@ set spell spelllang=en_us
 
 " Set font for GUI
 if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Ubuntu\ Mono\ 11
-  elseif has("gui_win32")
-    set guifont=Consolas:h11:cANSI
-  endif
+    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline 10
 endif
 
 " my perl includes pod
@@ -115,6 +111,7 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 
 "Airline config
 "let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
