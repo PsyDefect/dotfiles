@@ -45,6 +45,9 @@ HOSTNAME="`hostname`"
 PAGER='less'
 EDITOR='vim'
 
+autoload promptinit
+promptinit
+
 #set color values
 typeset -Ag FX FG BG
 
