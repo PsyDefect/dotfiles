@@ -18,7 +18,7 @@ Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'xolox/vim-session'
+"Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -119,6 +119,7 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-if $COLORTERM == 'gnome-terminal'
+if $TERM == 'xterm'
   set t_Co=256
+  hi Normal ctermbg=none
 endif
