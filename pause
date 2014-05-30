@@ -1,0 +1,4 @@
+#configuration for uploading modules to PAUSE
+user PSYDEFECT
+
+mailto = john.dexter@psydefect.com
