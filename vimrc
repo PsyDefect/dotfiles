@@ -27,6 +27,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'morhetz/gruvbox'
 Plugin 'ervandew/supertab'
+Plugin 'PsyDefect/dragvisuals.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -124,3 +125,11 @@ if $TERM == 'xterm'
   set t_Co=256
   hi Normal ctermbg=none
 endif
+
+"Configure DragVisual plugin
+vmap  <expr>  <S-LEFT>   DVB_Drag('left')
+vmap  <expr>  <S-RIGHT>  DVB_Drag('right')
+vmap  <expr>  <S-DOWN>   DVB_Drag('down')
+vmap  <expr>  <S-UP>     DVB_Drag('up')
+vmap  <expr>  D        DVB_Duplicate()
+
