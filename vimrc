@@ -18,7 +18,6 @@ Plugin 'tpope/vim-sensible'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'xolox/vim-session'
 Plugin 'xolox/vim-misc'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -28,6 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'morhetz/gruvbox'
 Plugin 'ervandew/supertab'
 Plugin 'PsyDefect/dragvisuals.vim'
+Plugin 'airblade/vim-gitgutter'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,17 +45,25 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Set the default backup dir so that you don't get temp files left in working
-" dirs. For Win.
-"silent execute '!mkdir "'.$VIMRUNTIME.'/temp"'
-"silent execute '!del "'.$VIMRUNTIME.'/temp/*~"'
-"set backupdir=$HOME\\.vim\\temp\\\\
-"set directory=$HOME\\.vim\\temp\\\\
+" dirs.
+if has('win32')
+    set backupdir=$HOME\\.vim\\temp\\\\
+    set directory=$HOME\\.vim\\temp\\\\
+else
+    set backupdir=~/.vim/temp/
+    set directory=~/.vim/temp/
 
-set backupdir=~/.vim/temp/
-set directory=~/.vim/temp/
+    " If run from the terminal...
+    if $TERM == 'xterm'
+        " Run in 256 color mode
+        set t_Co=256
+        " Make background transparent
+        hi Normal ctermbg=none
+    endif
+endif
 
 " Auto save files when you switch focus
-set autowriteall
+"set autowriteall
 
 " Let Vim do tab completion
 set wildmode=longest,list,full
@@ -87,6 +95,21 @@ set expandtab
 
 " Highlight searches
 set hlsearch
+
+" Show unnecessary whitespace
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
+" Make the 81st column stand out
+highlight ColorColumn ctermbg=DarkGray
+set colorcolumn=81
+
+" Always use visual block mode
+nnoremap v <C-V>
+nnoremap <C-V> v
+
+vnoremap v <C-V>
+vnoremap <C-V> v
 
 " Set default colorscheme
 colorscheme gruvbox
@@ -121,10 +144,6 @@ vnoremap <silent> _t :!perltidy -q<Enter>
 "let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-if $TERM == 'xterm'
-  set t_Co=256
-  hi Normal ctermbg=none
-endif
 
 "Configure DragVisual plugin
 vmap  <expr>  <S-LEFT>   DVB_Drag('left')
