@@ -55,10 +55,13 @@ else
 
     " If run from the terminal...
     if $TERM == 'xterm'
+
         " Run in 256 color mode
         set t_Co=256
+
         " Make background transparent
         hi Normal ctermbg=none
+
     endif
 endif
 
@@ -150,5 +153,5 @@ vmap  <expr>  <S-LEFT>   DVB_Drag('left')
 vmap  <expr>  <S-RIGHT>  DVB_Drag('right')
 vmap  <expr>  <S-DOWN>   DVB_Drag('down')
 vmap  <expr>  <S-UP>     DVB_Drag('up')
-vmap  <expr>  D        DVB_Duplicate()
+vmap  <expr>  D          DVB_Duplicate()
 
