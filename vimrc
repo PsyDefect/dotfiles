@@ -47,9 +47,9 @@ filetype plugin indent on    " required
 " Set the default backup dir so that you don't get temp files left in working
 " dirs.
 if has('win32')
-    set backupdir=$HOME\\.vim\\temp\\\\
-    set directory=$HOME\\.vim\\temp\\\\
-else
+    set backupdir=$HOME\\.vim\\temp\\
+    set directory=$HOME\\.vim\\temp\\
+elseif has('unix')
     set backupdir=~/.vim/temp/
     set directory=~/.vim/temp/
 
@@ -67,6 +67,7 @@ endif
 
 " Auto save files when you switch focus
 "set autowriteall
+
 
 " Let Vim do tab completion
 set wildmode=longest,list,full
@@ -86,9 +87,12 @@ set foldmethod=syntax
 " paste mode - this will avoid unexpected effects when you
 " cut or copy some text from one window and paste it in Vim.
 "set pastetoggle=<F11>
-set clipboard=unnamedplus  " use the clipboards of Vim and win
-"set paste               " Paste from a windows or from Vim
-"set go+=a               " Visual selection automatically copied to the clipboard
+if has('win32')
+    set clipboard+=unnamed
+    set paste
+else
+    set clipboard=unnamedplus
+endif
 
 " Make tabs default to 4 spaces
 set smartindent
@@ -116,7 +120,10 @@ vnoremap <C-V> v
 
 " Set default colorscheme
 colorscheme gruvbox
-set bg=dark    " Setting dark mode
+"set bg=dark    " Setting dark mode
+if !has("gui_running")
+    let g:gruvbox_italic=0
+endif
 
 " Line numbers
 set number
@@ -125,8 +132,11 @@ set number
 set spell spelllang=en_us
 
 " Set font for GUI
+set fenc=utf-8
+set encoding=utf-8
+
 if has("gui_running")
-    set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline 10
+    set guifont=Meslo_LG_M_DZ_for_Powerline:h10:cDEFAULT
 endif
 
 " my perl includes pod
