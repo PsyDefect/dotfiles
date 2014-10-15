@@ -83,7 +83,7 @@ nmap <tab> I<tab><esc>
 nmap <s-tab> ^i<bs><esc>
 
 " Code folding
-set foldmethod=syntax
+"set foldmethod=syntax
 
 " paste mode - this will avoid unexpected effects when you
 " cut or copy some text from one window and paste it in Vim.
@@ -121,7 +121,7 @@ vnoremap <C-V> v
 
 " Set default colorscheme
 colorscheme gruvbox
-"set bg=dark    " Setting dark mode
+set bg=dark    " Setting dark mode
 if !has("gui_running")
     let g:gruvbox_italic=0
 endif
@@ -136,8 +136,8 @@ set spell spelllang=en_us
 set fenc=utf-8
 set encoding=utf-8
 
-if has("gui_running")
-    set guifont=Meslo_LG_M_DZ_for_Powerline:h10:cDEFAULT
+if has("unix")
+    set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ 10
 endif
 
 " my perl includes pod
