@@ -28,6 +28,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'ervandew/supertab'
 Plugin 'PsyDefect/dragvisuals.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-perl/vim-perl'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
