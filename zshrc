@@ -15,5 +15,3 @@ antigen theme candy
 
 # Tell antigen that you're done.
 antigen apply
-
-source ~/perl5/perlbrew/etc/bashrc
