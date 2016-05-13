@@ -110,5 +110,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# include proxy functions
+. ~/.proxy
+
 #enable perlbrew
 source $HOME/perl5/perlbrew/etc/bashrc
