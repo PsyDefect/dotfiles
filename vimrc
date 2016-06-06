@@ -32,6 +32,7 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'vadv/vim-chef'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'yko/mojo.vim'
+Plugin 'scrooloose/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -171,3 +172,13 @@ vmap  <expr>  <S-DOWN>   DVB_Drag('down')
 vmap  <expr>  <S-UP>     DVB_Drag('up')
 vmap  <expr>  D          DVB_Duplicate()
 
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_perl_checker = 1
